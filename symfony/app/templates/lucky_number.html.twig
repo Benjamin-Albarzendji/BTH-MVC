@@ -1,0 +1,29 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Magic number{% endblock %}
+
+{% block body %}
+<h1>Lucky</h1>
+
+<div class="generalDiv">
+
+<div class="home">
+    <h1>Lucky number</h1>
+    <p>This is the current lucky number: {{ number }}</p>
+
+    <p>Here are some numbers that symbolise your number! (They Dont really)</p>
+
+
+    <div class="randomImages">
+
+    <img src="https://picsum.photos/200/300" alt="">
+
+
+    
+    <img src="https://source.unsplash.com/random/200x300" alt="">
+
+    <img src="https://source.unsplash.com/random/200x300?fruit,night,city,color"alt="">
+</div>
+</div>
+</div>
+{% endblock %}

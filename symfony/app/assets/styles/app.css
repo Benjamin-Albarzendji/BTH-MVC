@@ -1,0 +1,105 @@
+body {
+    margin: 0 auto;
+    /* max-width: 1920px; */
+    
+}
+
+h1 {
+    border-bottom: 4px double #ccc;
+}
+
+
+.site-header {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    width: 100vw;
+    height:100px;
+    text-align: center;
+
+    p{
+        font-size: 2rem;
+    }
+}
+
+.site-footer{
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    width: 100vw;
+    height:100px;
+    text-align: center;
+    position: fixed;
+    bottom: 0;
+
+}
+
+.navbar{
+    display: flex;
+    width: 100%;
+    list-style: none;
+    gap: 10px;
+    justify-content: center;
+    align-items: center;
+    height:100px;
+}
+
+.navbar a{
+    text-decoration: none;
+    color: black;
+    font-size: 20px;
+    background-color: #ccc;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.about{
+    width: 50%;
+    display: flex;
+    gap:20px;
+}
+
+.home{
+    width: 50%;
+    gap:20px;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 10px;
+
+}
+
+.generalDiv{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.col1, .col2{
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    background-color: #ccc;
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.generalDivReport{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.home .randomImages{
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    img{
+    border-radius: 20px;}
+}
+
+
+
+
+
