@@ -3,7 +3,7 @@
 {% block title %}About{% endblock %}
 
 {% block body %}
-<h1>About MVC</h1>
+<h1>Report</h1>
 
 
 <div class="generalDivReport">
@@ -14,12 +14,26 @@
 
     <div id="kmom01" class="reportBox home">
 
-        <p>Welcome to my awesome magical report homepage</p>
-        <p>My name is Benjamin and I am working as a Management Consultant specialising in Finance and Data Analytics. I
-            have previously worked for the United Nations. When I am not doing that I study software engineering at BTH.
-            To symbolise who I am, I have chosen Pikachu to represent me.</p>
+        <h5>Berätta kort om dina förkunskaper och tidigare erfarenheter kring objektorientering.</h5>
+        <p>Jag har tidigare använt objektorientering i TypeScript, JavaScript, Java och i Python. Jag har gjort flera projekt samt uppgifter och projekt på jobbet som kräver det. 
+            Jag är van vid termerna av inheritance, encapsulation, polymorphism och abstraction.
+        </p>
 
-        <img src="{{ asset('img/pikachu.jpg') }}" alt="Pikachu" style="width: 200px; height: 200px;">
+        <h5>Berätta kort om PHPs modell för klasser och objekt. Vilka är de grunder man behöver veta/förstå för att kunna komma igång och skapa sina första klasser?</h5>
+        <p>Man behöver förstå skillnaden på Object och Class. Man behöver förstå och använda public, private, protected och CONST variabler. Man bör veta hur man använder sig utav en constructor.</p>
+
+        <h5>Reflektera kort över den kodbas, koden, strukturen som användes till uppgiften me/report, hur uppfattar du den?</h5>
+        <p>Jag uppfattar den som komplex men modern. Koden är väldigt "modulär" och allt är på sin plats och har sin egen uppgift. Våra controllers agerar som både mottagare och sändebud, vilket fyller en otroligt viktig funktion. Det förvånade mig att Webpack användes här och att node var aktuellt. 
+            Twig var väldigt enkelt att använda, och det är ett bra templating språk som jag har tidigare använt. Annars var Symfony väldigt lätt att använda och att förstå sig på.
+        </p>
+
+        <h5>Med tanke på artikeln “PHP The Right Way”, vilka delar in den finner du extra intressanta och värdefulla? Är det några särskilda områden som du känner att du vill veta mer om? Lyft fram några delar av artikeln som du känner mer värdefulla.</h5>
+        <p>Jag finner Style Guiden är viktig att förhålla sig till. Det var även en intressant att läsa om PHPs "bredd" såsom att Recursion, Functional Programming och Namespaces. Jag är intresserad av att lära mig mer om hur databaser interagerar med PHP och mer om Templating.</p>
+
+        <h5>Ditt TIL?</h5>
+        <p>Mitt TIL har definitivt varit att använda Symfony. Det var mitt första MVC-ramverk som jag har använt mig utav när det gäller PHP. Det är kul att se likheterna men även skillnaderna! 
+            Ett annat TIL var att lösa problem med Controllers och få dem att fungera på studentservern.
+        </p>
 
     </div>
 
