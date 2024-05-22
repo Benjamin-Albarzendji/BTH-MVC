@@ -1,0 +1,18 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+<h1>Session</h1>
+
+{# {# Access the session variable #}
+
+{% for key,value in session %}
+    <p>{{ key }}</p>
+{% endfor %} 
+
+
+
+{% include 'flash.html.twig' %}
+
+{% endblock  %}

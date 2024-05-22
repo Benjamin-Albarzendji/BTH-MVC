@@ -8,7 +8,6 @@ use Symfony\Component\Routing\Annotation\Route;
 
 class ReportController extends AbstractController
 {
-
     #[Route("/lucky", name: "lucky")]
     public function number(): Response
     {
