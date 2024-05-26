@@ -100,10 +100,6 @@ h1 {
 }
 
 
-
-
-
-
 input {
     font-size: 1em;
 }
@@ -115,3 +111,37 @@ h1 {
 .die {
     font-size: 2em;
 }
+
+.content{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.cardHolder{
+    width: 90%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 20px;
+    
+}
+
+.card{
+    width: 50px;
+    border: solid 1px black;
+    padding-left: 10px;
+    padding-right: 10px;
+    border-radius: 10px;
+
+    .bottomCard{
+        display: flex;
+        justify-content: end;
+    }
+
+    .suit{
+        display: flex;
+        justify-content: center;
+    }
+}
+

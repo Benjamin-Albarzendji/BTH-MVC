@@ -4,11 +4,13 @@ namespace App\Controller;
 
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Response;
+use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Component\Routing\Annotation\Route;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
-class LuckyControllerJson
+class LuckyControllerJson extends AbstractController
 {
-    #[Route("/api")]
+    #[Route("/api", name: "api")]
     public function jsonNumber(): Response
     {
 
@@ -16,15 +18,16 @@ class LuckyControllerJson
         $data = [
             '/api' => "This is the API endpoint",
             '/api/quote' => "Get your daily dosage of wisdom",
+            "api/deck/" => "Get a deck of cards",
+            "api/deck/shuffle" => "Shuffle the deck",
+            "api/deck/draw" => "Draw a card from the deck",
         ];
 
-        // return new JsonResponse($data);
 
-        $response = new JsonResponse($data);
-        $response->setEncodingOptions(
-            $response->getEncodingOptions() | JSON_PRETTY_PRINT
-        );
-        return $response;
+
+        // Render the API template
+
+        return $this->render("api.html.twig", ["routes" => $data]);
     }
 
     #[Route("/api/quote")]

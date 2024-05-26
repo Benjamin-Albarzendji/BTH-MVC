@@ -2,24 +2,21 @@
 
 namespace App\Controller;
 
-
+use App\Card\DeckOfCards;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Session\SessionInterface;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
-
-
 class CardController extends AbstractController
 {
-
     // The /session route is used to print out session data to the template
     #[Route("/session", name: "session")]
     public function session(SessionInterface $session): Response
     {
 
-    
+
         return $this->render('card/session.html.twig', [
             'session' => $session->all(),
         ]);
@@ -45,26 +42,85 @@ class CardController extends AbstractController
     #[Route("/card", name: "card")]
     public function card(SessionInterface $session): Response
     {
-        // Check if session data is set
-        if (!$session->has('card')) {
-            $session->set('card', []);
-        }
 
-        // Get session data
-        $data = $session->get('card');
 
-        // Check if session data is set
-        if (!$session->has('score')) {
-            $session->set('score', 0);
-        }
 
-        // Get session data
-        $score = $session->get('score');
-
-        return $this->render('card/card.html.twig', [
-            'data' => $data,
-            'score' => $score,
-        ]);
+        return $this->render('card/card.html.twig');
     }
+
+    // card/Deck is used to create a deck of cards
+    #[Route("/card/deck", name: "card_deck")]
+    public function deck(SessionInterface $session): Response
+    {
+
+        // Check if session has deck, otherwise create it
+        if ($session->has('deck')) {
+            $deckOfCards = $session->get('deck');
+        } else {
+            $deckOfCards = new DeckOfCards();
+        }
+
+
+        // Get the deck of cards
+        $deck = $deckOfCards->getDeckOfCards();
+
+        // Set session data
+        $session->set('deck', $deckOfCards);
+
+        return $this->render("card/deckOfCards.html.twig", ["deck" => $deck]);
+    }
+
+    // card/deck/shuffle shuffles the cards
+    #[Route("/card/deck/shuffle", name: "card_shuffle")]
+    public function shuffle(SessionInterface $session): Response
+    {
+
+        // Check if session has deck, otherwise create the deck
+        if (!$session->has('deck')) {
+            $deck = new DeckOfCards();
+        } else {
+            $deck = $session->get('deck');
+        }
+
+        // Shuffle the deck
+        $deck->shuffleCards();
+
+        // Set session data after shuffling
+        $session->set('deck', $deck);
+
+        // Redirect to deck of cards
+        return $this->redirectToRoute('card_deck');
+    }
+
+    /**
+     *  The card/deck/draw route is used to draw a card from the deck
+     */
+
+    #[Route("/card/deck/draw/{number}", name: "card_draw")]
+    public function draw(SessionInterface $session, int $number = 1): Response
+    {
+
+        // Get the number to draw from the URL
+
+
+        // Check if session has deck, otherwise create the deck
+        if (!$session->has('deck')) {
+            $deck = new DeckOfCards();
+        } else {
+            $deck = $session->get('deck');
+        }
+
+        // Get the card
+        $cards = $deck->getCard($number);
+
+        // Set session data after drawing a card
+        $session->set('deck', $deck);
+
+
+        // Render draw_card
+        return $this->render('card/draw_card.html.twig', ['cards' => $cards[0],
+            'countOfCards' => $cards[1]]);
+    }
+
 
 }

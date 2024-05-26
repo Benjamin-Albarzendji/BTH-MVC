@@ -1,0 +1,35 @@
+{% extends "base.html.twig" %}
+
+{% block title %}Draw Card{% endblock %}
+
+
+{% block body %}
+
+
+<div class="content">
+    <div class="cardHolder">
+
+        {% for card in cards %}
+        {% if card is not null %}
+        <div class="card">
+            <h3 class = "topCard" style="color:{{card.getCardColor()}}">
+                {{ card.getCardValue() }}</h3>
+            <p class="suit" style="color:{{card.getCardColor()}}">{{ card.getCardSuit }}</p>
+            <h3 class ="bottomCard" style="color:{{card.getCardColor()}}">{{ card.getCardValue() }}</h3>
+    
+        </div>
+        {% endif %}
+        {% endfor %}
+
+    </div>
+</div>
+        <div class="remainingCards">
+            Remaining Cards: {{ countOfCards}}
+        </div>
+
+
+
+
+
+
+        {% endblock %}

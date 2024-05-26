@@ -1,0 +1,30 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+
+<h1>Session</h1>
+
+{# {# Access the session variable #}
+
+{% for key,value in routes %}
+    <p>{{ key }}: {{value}}</p>
+{% endfor %} 
+
+{# Create post formula to shuffle cards #}
+<form action="{{ path('jsonShuffle') }}" method="post">
+    <input type="submit" value="Shuffle Cards">
+</form> 
+
+
+    {# Post form for getting amunt of cards #}
+    <form action="{{ path('jsonDraw') }}" method="post">
+        <input type="number" name="number" id="number" placeholder="Amount of cards">
+        <input type="submit" value="Get Cards">
+    </form>
+
+
+
+{% include 'flash.html.twig' %}
+
+{% endblock  %}
