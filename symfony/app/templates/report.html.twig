@@ -38,8 +38,25 @@
     </div>
 
     <div id="kmom02" class="reportBox home">
-        <p>To be continued....</p>
+        <h5>Förklara kort de objektorienterade konstruktionerna arv, komposition, interface och trait och hur de används i PHP.</h5>
+        <div><p>Arv: Innebär att man ärver egenskaper, attribut och metoder(funktioner) från en annan klass. Man har rätt att överskriva dem och "förlänga" dem utan vidare problem. Detta är för att reducera mängden av replikerad kod. Kan uppstå problem om man ska ärva från flera ställen.</p>
+        <p>
+Komposition: Innebär att man skapar en klass som innehåller andra klasser. Detta är bra då man slipper att ärva och kan "sticka ihop" klasser utan vidare problem.
+
+        </p>
+    
+    <p>Interface: Ett kontrakt som lovar vad en class skall innehålla. T.ex då kan vi säga att alla klasser som innehåller interfacet "Card" skall, på ett minimum, implementera allt som interfacet lovar. Då anses de vara ett "Card" class.</p>
+<p>Trait: Trait är likt komposition men istället innebär det att metoder, attribut, etc kan "injekteras" i en klass och således får den egenskaperna som traiten utlovar. T.ex "Shuffle Cards" traitet skulle kunna implementeras i flera DeckOfCards klasser utan att de behöver replikera koden i sin egen klass eller ärva den. Detta innebär i praktiken att man skapa klasser med traits från en hel del källor utan att skapa själva klasser så som i komposition eller ärva dem.</p></div>
     </div>
+
+    <h5>Berätta om din implementation från uppgiften. Hur löste du uppgiften, är du nöjd/missnöjd, vilken förbättringspotential ser du i din koden och dina klasser?</h5>
+    <p>Uppgiften var väldigt rolig att utföra. Jag har tidigare arbetat med MVC-mönstret men det var lite tufft att göra det i en helt ny miljö såsom Symfoni. Jag fick väldigt många problem, speciellt med Namespace men lyckades lösa det efter hand. Det finns en hel del förbättringspotential. Då koden är inte så elegant och hade behövt bättre kommentering. Designen är också rätt så dålig. </p>
+
+    <h5>Vilka är dina reflektioner så här långt med att jobb i Symfony med applikationskod enligt MVC?</h5>
+    <p>Jag har tidigare arbetat med MVC. Jag gillar mönstret, och det är kul att stycka ut koden i sina egna containers. Det var som sagt tufft att arbeta med Namespacet, men det löste sig tillslut. Sessionerna utgjorde också ett problem men det var mest buggar jag hade implementerat i min egen kod, men det löste sig tillslut! </p>
+
+    <h5>Vilket är din TIL för detta kmom?</h5>
+    <p>Mitt TIL skulle defintiivt vara att hantera Symfony och sessioner, och speciellt hur man utförde en POST till API via formulär i session. Jag måste dock säga att Symfoni är mycket roligare att arbeta i än Node och Flask. Dock blir man förvirrad över hur mycket filer som existerar. Att hantera det och lösa buggar var definitvt ett stort TIL. </p>
 
 
     <div id="kmom03" class="reportBox home">
