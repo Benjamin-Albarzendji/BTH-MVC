@@ -6,6 +6,11 @@
 
 {% block body %}
 
+<div class="content">
+
+<div class="cardContent">
+
+<div class="links">
 
 <a href="{{ path('card_deck') }}">Deck of Cards</a>
 
@@ -14,6 +19,20 @@
 <a href="{{ path('card_shuffle') }}">Shuffle Cards</a>
 
 <a href="{{ path('card_draw') }}">Draw Cards</a>
+</div>
+
+
+
+<img src="{{ asset('img/UML.png') }}" alt="UML" width="500" height="500">
+<div class="UMLDescription">The card game consists of three classes (as of now). The first being the card class that handles the operations of the card, such as getting suit, value and color. An inheritance is created with CardGraphic that makes the suites graphic rather than having them as a string. The composition is created by the DeckOfCards class that creates a full deck with a random creation between Card and CardGraphic. The class also shuffles and gets cards from the deck.</div>
+</div>
+</div>
+
+
+
+
+
+{% include 'flash.html.twig' %}
 
 
 

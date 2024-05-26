@@ -127,6 +127,30 @@ h1 {
     
 }
 
+.cardContent{
+
+    width: 50%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+
+    .links{
+        display: flex;
+        justify-content: center;
+        gap: 20px;}
+}
+
+.UMLDescription{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
 .card{
     width: 50px;
     border: solid 1px black;
@@ -144,4 +168,5 @@ h1 {
         justify-content: center;
     }
 }
+
 
